@@ -5,6 +5,17 @@ exports["setUp"] = function(callback) {
   callback();
 };
 
+exports["Can compute a letter grade"] = function(test){
+  book.addGrade(50);
+  book.addGrade(60);
+
+  var result = book.getLetterGrade();
+
+  test.equal(result, `F`);
+  test.done();
+};
+
+
 exports["Can add new Grade"] = function (test) {
   book.addGrade(90);
   book.addGrade(70);
